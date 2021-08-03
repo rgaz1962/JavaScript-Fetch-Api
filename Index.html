@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- cdnjs get skeleton cdngs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS Center = cssc;01 -->
+  <style>
+    body {
+      width: 90%;
+      height: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  </style>
+  <title>JavaScript Fetch Api</title>
+</head>
+
+<body>
+  <h1>JavaScript Fetch Api</h1>
+
+  <div id="myData"></div>
+  <script>
+    fetch('people.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        appendData(data);
+      })
+      .catch(function (err) {
+        console.log('error: ' + err);
+      });
+    function appendData(data) {
+      var mainContainer = document.getElementById("myData");
+      for (var i = 0; i < data.length; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+        mainContainer.appendChild(div);
+      }
+    }
+  </script>
+
+  <hr>
+  <pre><code>
+
+    fetch('people.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        appendData(data);
+      })
+      .catch(function (err) {
+        console.log('error: ' + err);
+      });
+    function appendData(data) {
+      var mainContainer = document.getElementById("myData");
+      for (var i = 0; i < data.length; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+        mainContainer.appendChild(div);
+      }
+    }
+
+
+</code></pre>
+  <hr>
+  <br>
+
+  <br>
+  <hr>
+
+  <a href="/JavaScript_Sandbox/JavaScript-Fetch-Promise-Json.html" target="_blank" rel="noopener noreferrer">
+    JavaScript Fetch Promise Json Example</a> |
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank"
+    rel="noopener noreferrer">
+    MDN Fetch</a> |
+
+  <a href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch" target="_blank"
+    rel="noopener noreferrer">Google Dev Fetch </a> |
+
+  <a href="https://javascript.info/promise-api" target="_blank" rel="noopener noreferrer">JS Info Promise Api</a> |
+
+  <a href="https://dmitripavlutin.com/javascript-fetch-async-await/" target="_blank" rel="noopener noreferrer">
+    Dmitri Fetch Async/Await </a> |
+
+  <a href="https://www.javascripttutorial.net/javascript-fetch-api/" target="_blank" rel="noopener noreferrer">
+    JS Tuts Fetch Api</a>
+
+  <br>
+  <br>
+
+
+  <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data"
+    target="_blank" rel="noopener noreferrer">Digital Ocean Fetch to Get Data </a> |
+
+  <a href="https://nodejs.dev/learn/understanding-javascript-promises" target="_blank" rel="noopener noreferrer">
+    Node js JavaScript Promises</a> |
+
+  <a href="https://stackoverflow.com/questions/32721850/why-is-the-response-object-from-javascript-fetch-api-a-promise"
+    target="_blank" rel="noopener noreferrer">Stack Overflow Fetch Api and Promise</a> |
+
+  <a href="https://web.dev/promises/" target="_blank" rel="noopener noreferrer">Web Dev Promises</a>
+
+  <a href="https://www.codegrepper.com/code-examples/javascript/javascript+fetch+with+promise" target="_blank"
+    rel="noopener noreferrer">Code Grepper Fetch and Promises</a>
+
+  <br>
+  <br>
+
+  <a href="https://howtocreateapps.com/fetch-and-display-json-html-javascript/" target="_blank"
+    rel="noopener noreferrer">
+    How to Fetch Display Json in Html with Vanilla JavaScript </a>
+
+
+
+
+  <br> <br> <br> <br>
+</body>
+
+</html>
